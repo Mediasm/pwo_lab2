@@ -2,6 +2,7 @@ package main;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -41,4 +42,17 @@ public class main {
         }
     }
 
+    public static void register() {
+        System.out.print("Enter username: ");
+        String username = scanner.nextLine();
+        System.out.print("Enter password: ");
+        String password = scanner.nextLine();
+        try {
+
+            FileWriter fileWriter = new FileWriter(USER_FILE);
+            fileWriter.write(username + ":" + password);
+        } catch (Exception e) {
+            System.out.println("error writing to file");
+        }
+    }
 }
