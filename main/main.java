@@ -51,8 +51,12 @@ public class main {
 
             FileWriter fileWriter = new FileWriter(USER_FILE);
             fileWriter.write(username + ":" + password);
+            fileWriter.close();
         } catch (Exception e) {
             System.out.println("error writing to file");
         }
     }
+
+
+
 }
